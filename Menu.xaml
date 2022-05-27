@@ -1,0 +1,43 @@
+﻿<Window x:Class="Forum.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Forum"
+        mc:Ignorable="d"
+        Title="Форум" Height="450" Width="820">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127"/>
+            <ColumnDefinition Width="226.133"/>
+            <ColumnDefinition Width="151.867"/>
+            <ColumnDefinition Width="67"/>
+            <ColumnDefinition Width="53"/>
+            <ColumnDefinition Width="18"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="33"></RowDefinition>
+            <RowDefinition Height="31.822"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="3" Name="TaskGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" SelectedItem="{Binding Task}" SelectionChanged="TaskGrid_SelectionChanged" MouseDoubleClick="TaskGrid_MouseDoubleClick" Grid.ColumnSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="25" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Название" Width="300" Binding="{Binding Tittle}"/>
+                <DataGridTextColumn Header="Автор" Width="*" Binding="{Binding IdAuthorNavigation.Login}"/>
+                <DataGridTextColumn Header="Дата" Width="90" Binding="{Binding Date}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="List" Content="Список пользователей" Grid.Column="6" Grid.Row="0" Click="List_Click"></Button>
+        <Button Name="ProfileBtn" Content="Мой профиль" Grid.Column="3" Click="ProfileBtn_Click" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Пользователь:" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="2" Width="79"/>
+        <TextBlock Text="{Binding Login}" Grid.Column="6" Grid.Row="2"/>
+        <TextBox Name="LoginBox"/>
+        <Button Name="SearchBtn"  Grid.Column="1" Content="Найти задачу по логину" HorizontalAlignment="Left" Click="SearchBtn_Click"/>
+    </Grid>
+</Window>

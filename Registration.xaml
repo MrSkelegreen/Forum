@@ -1,0 +1,47 @@
+﻿<Window x:Class="Forum.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Forum"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="370" Width="350" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="13"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="54"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="90"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Логин:" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Grid.Column="0" Grid.Row="2"><Run Language="ru-ru" Text="Пароль"/><Run Text=":"/></TextBlock>
+        <TextBlock Text="Имя:" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="Фамилия:" Grid.Column="0" Grid.Row="4"/>
+        <TextBlock Text="Отчество:" Grid.Column="0" Grid.Row="5"/>
+        <TextBlock Text="Н. телефона:" Grid.Column="0" Grid.Row="6"/>
+
+        <TextBox Name="LgnBox" Grid.Column="1" Grid.Row="1"/>
+        <TextBox Name="PsBox" Grid.Column="1" Grid.Row="2"/>
+        <TextBox Name="NameBox" Grid.Column="1" Grid.Row="3"/>
+        <TextBox Name="SecNameBox" Grid.Column="1" Grid.Row="4"/>
+        <TextBox Name="LastNameBox" Grid.Column="1" Grid.Row="5"/>
+        <TextBox Name="PhoneBox" Grid.Column="1" Grid.Row="6"/>
+
+        <Button Name="RegBtn" Content="Регистрация" Grid.Column="1" Grid.Row="8" Click="RegBtn_Click"></Button>
+        <Button x:Name="BackBtn" Click="BackBtn_Click" Grid.Column="1" Grid.Row="10" Content="Назад"></Button>
+    </Grid>
+</Window>
